@@ -37,17 +37,23 @@ export const Product = ({
 
 
             <div className='operation'>
-                <button
-                    className='btnProduct icon'
-                    onClick={handleAdd}
-                > <i class="fa-solid fa-plus"></i> </button> 
+                <div className='btnProduct'>
+                    <button
+                        className='icon'
+                        onClick={handleAdd}
+                    > <i class="fa-solid fa-plus"></i> 
+                    </button> 
+                </div>
 
                 <h1 className='text-center'>{count}</h1> 
 
-                <button
-                    className='btnProduct icon'
-                    onClick={handleSubstract}
-                > <i class="fa-solid fa-minus"></i> </button>
+                <div className='btnProduct'>
+                    <button
+                        className='icon'
+                        onClick={handleSubstract}
+                    > <i class="fa-solid fa-minus"></i> 
+                    </button>
+                </div>
 
                 <h1>${priceWT}</h1>
                 <button className='icon'><i class="fa-solid fa-trash-can"></i></button>

@@ -60,8 +60,10 @@ img{
 
 .btnProduct{
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(207, 206, 206);
+    display: grid;
 }
 hr {
     height: 25px;
