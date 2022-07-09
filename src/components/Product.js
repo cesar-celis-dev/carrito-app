@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import {pictures} from "../helpers/Images";
 
 
-export const Product = ({info}) => {
+export const Product = ({
+    id,
+    name,
+    description,
+    priceWT
+}) => {
 
-const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
-    const handleSuma = (() => {
+    const handleAdd = (() => {
         setCount(count+1)
     })
-
-    const handleResta =(() => {
+  
+    const handleSubstract =(() => {
         setCount(count-1)
     })
+  
 
   return (
     <div>
@@ -21,30 +27,32 @@ const [count, setCount] = useState(0)
 
             <div className='item'>
                 <div className='imgdiv'>
-                    <img src={pictures[1]} alt="laptop" width="150" height="150" />
+                    <img src={pictures[id]} alt={name} width="150" height="150" />
                 </div>
                 <div className='information'>
-                    <h2>Laptop</h2>
-                    <button className='simple'>Information</button>
+                    <h2>{name}</h2>
+                    <h4 className='textTenue'>{description}</h4>
                 </div>
             </div>
 
 
             <div className='operation'>
                 <button
-                    className='btnProduct'
-                    onClick={handleSuma}
-                > + </button> 
+                    className='btnProduct icon'
+                    onClick={handleAdd}
+                > <i class="fa-solid fa-plus"></i> </button> 
 
-                {count} 
+                <h1 className='text-center'>{count}</h1> 
 
                 <button
-                    className='btnProduct'
-                    onClick={handleResta}
-                > - </button>
-                {info.priceWT}
+                    className='btnProduct icon'
+                    onClick={handleSubstract}
+                > <i class="fa-solid fa-minus"></i> </button>
 
+                <h1>${priceWT}</h1>
+                <button className='icon'><i class="fa-solid fa-trash-can"></i></button>
             </div>
+
 
         </div>
 

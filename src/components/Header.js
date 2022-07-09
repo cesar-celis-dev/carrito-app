@@ -1,5 +1,4 @@
 import React from 'react';
-import { pictures } from '../helpers/Images';
 import '../index.css';
 
 
@@ -9,10 +8,10 @@ export const Header = () => {
 
         <div className='header'>
             <div className='cart'>
-                    <img src= {pictures[0]} alt="cart" width="70" height="70" />
+                    <button className='icon'><i className="fa-solid fa-cart-shopping"></i></button>
                     <h1>Order Summary</h1>
             </div>
-            <button className='simple'><h1>Remove all</h1></button>
+            <button className='simple textTenue'><h2>Remove all</h2></button>
         </div>
 
     </div>
