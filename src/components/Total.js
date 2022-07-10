@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export const Total = () => {
+export const Total = ({billing}) => {
   return (
     <div>
         <div className='totaldiv'>
@@ -11,10 +11,10 @@ export const Total = () => {
                 <h1 className='bold'>Total (Including tax)</h1>
             </div>
             <div>
-                <h1>$0</h1>
-                <h1>$0</h1>
-                <h1>$0</h1>
-                <h1 className='bold'>$0</h1>
+                <h1>{billing.subtotal}</h1>
+                <h1>{billing.shipping}</h1>
+                <h1>{billing.taxes}</h1>
+                <h1 className='bold'>{billing.total}</h1>
             </div>
         </div>
     </div>

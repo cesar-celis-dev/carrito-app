@@ -1,6 +1,6 @@
 export const products = [
     {
-        id:"1",
+        id:1,
         name:"Laptop",
         description:"light and fast",
         quantity:10,
@@ -9,7 +9,7 @@ export const products = [
         shippingFee:200
     },
     {
-        id:"2",
+        id:2,
         name:"Keyboard",
         description:"mechanic",
         quantity:15,
@@ -18,7 +18,7 @@ export const products = [
         shippingFee:200
     },
     {
-        id:"3",
+        id:3,
         name:"Mouse",
         description:"laser sensor",
         quantity:20,
@@ -27,7 +27,7 @@ export const products = [
         shippingFee:200
     },
     {
-        id:"4",
+        id:4,
         name:"Display",
         description:"30\" LCD",
         quantity:5,
