@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { products } from '../data/products';
+import { getProductIndex } from '../helpers/getProductIndex';
 import { Header } from './Header';
 import { Product } from './Product';
 import { Total } from './Total';
@@ -9,79 +10,72 @@ const initial_state = [{ id: 1, quantity: 3 }, { id: 2, quantity: 2 }, { id: 3, 
 export const Main = () => {
 
   const [cart, setCart] = useState(initial_state);
-
   const [billing, setBilling] = useState({});
 
   useEffect(() => {
-    if(cart.length){
+    if (cart.length) {
       calculate();
     };
-    if ( !cart.length ){
+    if (!cart.length) {
       setBilling({
-        subtotal:0,
-        shipping:0,
-        taxes:0,
-        total:0
+        subtotal: 0,
+        shipping: 0,
+        taxes: 0,
+        total: 0
       })
-            
+
     }
 
   }, [cart])
 
   const handleAddProduct = (id) => {
-
     const findItem = cart.filter(item => item.id === id);
-    const indexProduct = products.findIndex(i => {
-      return i.id === id;     
-    });
-  
-    if (findItem[0].quantity === products[indexProduct].quantity) return;     
+    const indexProduct = getProductIndex(id);
 
-    const oldCart = [...cart];  
-    const newCart = oldCart.map((e) =>{
-        if(e.id === id){
-          return {...e,
-            quantity: e.quantity + 1
-            }
-        }else{
-          return e;
+    if (findItem[0].quantity === products[indexProduct].quantity) return;
+
+    const oldCart = [...cart];
+    const newCart = oldCart.map((e) => {
+      if (e.id === id) {
+        return {
+          ...e,
+          quantity: e.quantity + 1
         }
+      } else {
+        return e;
+      }
     })
-   
     setCart(newCart);
-
   }
 
   const handleSubstractProduct = (id) => {
-
     const findItem = cart.filter(item => item.id === id);
 
-    if (findItem[0].quantity === 1) return; 
-    
-    const oldCart = [...cart];  
-    const newCart = oldCart.map((e) =>{
-        if(e.id === id){
-          return {...e,
-            quantity: e.quantity - 1
-            }
-        }else{
-          return e;
+    if (findItem[0].quantity === 1) return;
+
+    const oldCart = [...cart];
+    const newCart = oldCart.map((e) => {
+      if (e.id === id) {
+        return {
+          ...e,
+          quantity: e.quantity - 1
         }
+      } else {
+        return e;
+      }
     })
-    
+
     setCart(newCart);
   }
 
   const handleDeleteProduct = (id) => {
 
     const oldCart = [...cart];
-    const newCart = oldCart.filter( ( e ) => e.id !== id );
-    
-
-    setCart(newCart);   
+    const newCart = oldCart.filter((e) => e.id !== id);
+    setCart(newCart);
   }
 
-  const handleRemoveAll = () =>{
+  const handleRemoveAll = () => {
     setCart([]);
   }
 
@@ -92,16 +86,14 @@ export const Main = () => {
     let total = 0;
 
     cart.map(item => {
-      const indexProduct = products.findIndex(i => {
-        return i.id === item.id;     
-      });
+      const indexProduct = getProductIndex(item.id);
       const product = products[indexProduct];
-      subtotal = subtotal + item.quantity*product.priceWT;
-      taxes = taxes + item.quantity*product.tax;
-      shipping = shipping + item.quantity*product.shippingFee;
+      subtotal = subtotal + item.quantity * product.priceWT;
+      taxes = taxes + item.quantity * product.tax;
+      shipping = shipping + item.quantity * product.shippingFee;
       return product;
     });
-    total= subtotal+shipping+taxes;
+    total = subtotal + shipping + taxes;
 
     const bill = {
       subtotal,
@@ -109,9 +101,8 @@ export const Main = () => {
       taxes,
       total
     }
-
     setBilling(bill);
-  } 
+  }
 
   return (
     <div className='main container'>
@@ -119,29 +110,25 @@ export const Main = () => {
         <Header onRemoveAll={handleRemoveAll} />
         <div className='products-container'>
           {
-            cart.map(item =>
-              {
-                const index = products.findIndex(i => {
-                  return i.id === item.id;     
-                });
-              return  (<Product
-              onAdd={handleAddProduct}
-              onSub={handleSubstractProduct}
-              value={item.quantity}
-              onDelete={handleDeleteProduct}       
-              key={item.id}  
-              id={item.id}
-              name={products[index].name}
-              description={products[index].description}
-              priceWT={products[index].priceWT}
+            cart.map(item => {
+              const index = getProductIndex(item.id);
+              return (<Product
+                onAdd={handleAddProduct}
+                onSub={handleSubstractProduct}
+                value={item.quantity}
+                onDelete={handleDeleteProduct}
+                key={item.id}
+                id={item.id}
+                name={products[index].name}
+                description={products[index].description}
+                priceWT={products[index].priceWT}
               />)
             })
           }
-
         </div>
       </div>
       <hr />
-          <Total ticket={billing} />
+      <Total ticket={billing} />
     </div>
   )
 }
