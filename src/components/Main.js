@@ -23,9 +23,8 @@ export const Main = () => {
         taxes:0,
         total:0
       })
-      
-      
-      }
+            
+    }
 
   }, [cart])
 
@@ -100,6 +99,7 @@ export const Main = () => {
       subtotal = subtotal + item.quantity*product.priceWT;
       taxes = taxes + item.quantity*product.tax;
       shipping = shipping + item.quantity*product.shippingFee;
+      return product;
     });
     total= subtotal+shipping+taxes;
 

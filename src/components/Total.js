@@ -20,11 +20,11 @@ export const Total = ({ticket}) => {
   return (
     <div>
         <div className='totaldiv'>
-            <div className='subtotalesTextDiv'>
-                <div className='subtotalText'>Subtotal</div>
-                <div className='subtotalText'>Shipping fees</div>
-                <div className='subtotalText'>Taxes</div>
-                <div className='subtotalText bold'>Total (Including tax)</div>
+            <div className='totalesTextDiv'>
+                <div className='totalText'>Subtotal</div>
+                <div className='totalText'>Shipping fees</div>
+                <div className='totalText'>Taxes</div>
+                <div className='totalText bold'>Total (Including tax)</div>
             </div>
             <div className='subtotales'>
                 <div className='value'>${currencyFormatted(ticket.subtotal)}</div>
