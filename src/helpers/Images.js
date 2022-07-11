@@ -1,8 +1,8 @@
 
-import Laptop from "../images/Laptop.jpg";
-import Keyboard from "../images/Keyboard.jpg";
-import Mouse from "../images/Mouse.jpg";
-import Display from "../images/Display.jpg";
+import Laptop from "../images/iLaptop.jpg";
+import Keyboard from "../images/iKeyboard.jpg";
+import Mouse from "../images/iMouse.jpg";
+import Display from "../images/iDisplay.jpg";
 
 
-export const pictures = [Laptop, Keyboard, Mouse, Display]
+export const pictures = [Laptop, Keyboard, Mouse, Display];
