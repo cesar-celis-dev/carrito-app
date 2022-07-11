@@ -13,7 +13,7 @@ export const products = [
         name:"Keyboard",
         description:"mechanic",
         quantity:15,
-        priceWT:20.5,
+        priceWT:20.54,
         tax:3.28,
         shippingFee:5.2
     },
@@ -22,7 +22,7 @@ export const products = [
         name:"Mouse",
         description:"laser sensor",
         quantity:20,
-        priceWT:4.8,
+        priceWT:4.85,
         tax:0.76,
         shippingFee:5.2
     },

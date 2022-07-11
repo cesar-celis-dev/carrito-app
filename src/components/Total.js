@@ -3,7 +3,7 @@ import React from 'react';
 export const Total = ({ticket}) => {
 
   const currencyFormatted= (amount)=> {
-    
+
     let i = parseFloat(amount);
       if(isNaN(i)) { i = 0.00; }
     let minus = '';
@@ -20,17 +20,17 @@ export const Total = ({ticket}) => {
   return (
     <div>
         <div className='totaldiv'>
-            <div>
-                <h1>Subtotal</h1>
-                <h1>Shipping fees</h1>
-                <h1>Taxes</h1>
-                <h1 className='bold'>Total (Including tax)</h1>
+            <div className='subtotalesTextDiv'>
+                <div className='subtotalText'>Subtotal</div>
+                <div className='subtotalText'>Shipping fees</div>
+                <div className='subtotalText'>Taxes</div>
+                <div className='subtotalText bold'>Total (Including tax)</div>
             </div>
-            <div>
-                <h1>${currencyFormatted(ticket.subtotal)}</h1>
-                <h1>${currencyFormatted(ticket.shipping)}</h1>
-                <h1>${currencyFormatted(ticket.taxes)}</h1>
-                <h1 className='bold'>${currencyFormatted(ticket.total)}</h1>
+            <div className='subtotales'>
+                <div className='value'>${currencyFormatted(ticket.subtotal)}</div>
+                <div className='value'>${currencyFormatted(ticket.shipping)}</div>
+                <div className='value'>${currencyFormatted(ticket.taxes)}</div>
+                <div className='bold'>${currencyFormatted(ticket.total)}</div>
             </div>
         </div>
     </div>

@@ -15,7 +15,18 @@ export const Main = () => {
   useEffect(() => {
     if(cart.length){
       calculate();
-    }
+    };
+    if ( !cart.length ){
+      setBilling({
+        subtotal:0,
+        shipping:0,
+        taxes:0,
+        total:0
+      })
+      
+      
+      }
+
   }, [cart])
 
   const handleAddProduct = (id) => {
@@ -72,7 +83,7 @@ export const Main = () => {
   }
 
   const handleRemoveAll = () =>{
-    setCart([])
+    setCart([]);
   }
 
   const calculate = () => {

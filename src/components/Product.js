@@ -23,8 +23,8 @@ export const Product = ({
                     <img src={pictures[id-1]} alt={name} width="150" height="150" />
                 </div>
                 <div className='information'>
-                    <h2>{name}</h2>
-                    <h4 className='textTenue'>{description}</h4>
+                    <div className='text-title'>{name}</div>
+                    <div className='textTenue'>{description}</div>
                 </div>
             </div>
 
@@ -32,26 +32,26 @@ export const Product = ({
             <div className='operation'>
                 <div className='btnProduct'>
                     <button
-                        className='icon'
+                        className='iconOp'
                         onClick={() => onSub(id)}
                     >  <i className="fa-solid fa-minus"></i>
                     </button> 
                 </div>
 
-                <h1 className='text-center'>{value}</h1> 
+                <div className='value'>{value}</div> 
 
                 <div className='btnProduct'>
                     <button
-                        className='icon'
+                        className='iconOp'
                         onClick={() => onAdd(id)}                 
                     >  <i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <h1>${priceWT}</h1>
+                <div className='value'>${priceWT}</div>
                 <button 
                     onClick={() => onDelete(id)}
-                    className='icon'>
+                    className='iconDelete'>
                     <i className="fa-solid fa-trash-can"></i>
                 </button>
             </div>

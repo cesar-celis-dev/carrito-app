@@ -1,15 +1,28 @@
 .main{
     width: 900px;
-    height: 1200px;
-    background-color: rgb(226, 226, 226);
+    height: 1250px;
+    background-color: rgb(243, 245, 247);
     border-radius: 50px;
-    padding: 30px;
+    padding: 50px;
+    box-shadow: 5px 20px 20px 10px rgba(3, 3, 3, 0.05);
+    border: 1px solid rgb(224, 224, 224);
 }
 
 .cart{
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 100px 300px;
     align-items: center;
+}
+.removeAll{
+    font-size: 1.7rem;
+    color: rgb(148, 148, 148);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.orderSummary{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(99, 99, 99);
 }
 .header{
     display: grid;
@@ -22,27 +35,35 @@
     border: none;
 }
 .textTenue{
-    color: rgb(156, 156, 156);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: rgb(105, 105, 105);
 }
 
 .bold{
     font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .information{
-    display: grid;
-    grid-template-rows: auto auto;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
 }
 
 img{
     border-radius: 40px;
+    box-shadow: 5px 5px 10px 5px rgba(3, 3, 3, 0.08);
+    border: 1px solid rgb(201, 201, 201);
 }
-
+.value{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
 .item{
     display: grid;
     grid-template-columns: 150px 200px;
+    align-items: center;
 }
 
 .product{
@@ -53,16 +74,16 @@ img{
 
 .operation{
     display: grid;
-    grid-template-columns: 50px 50px 50px 120px 30px;
+    grid-template-columns: 40px 40px 40px 120px 30px;
     align-items: center;
     justify-content: space-around;
 }
 
 .btnProduct{
     border-radius: 100%;
-    width: 60px;
-    height: 60px;
-    background-color: rgb(207, 206, 206);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(217, 229, 237);
     display: grid;
 }
 hr {
@@ -88,14 +109,48 @@ hr {
       hsla(0, 0%, 0%, 0));
   }
 
-.icon{
+.iconCart{
+    display: grid;
     background: none;
     border: none;
     font-size: 35px;
     color: gray;
+    justify-content: center;
+    
+}
+.iconOp{
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
+}
+.iconDelete{
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: rgb(146, 146, 146);
 }
 .totaldiv{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
+}
+.subtotales{
+    display: grid;
+   justify-items: end;
+   row-gap: 15px;
+}
+.text-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+}
+.subtotalesTextDiv{
+    display: grid;
+    row-gap: 15px;
+}
+.subtotalText{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
