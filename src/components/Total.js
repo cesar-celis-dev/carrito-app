@@ -1,7 +1,9 @@
 import React from 'react';
 
 export const Total = ({ticket}) => {
+
   const currencyFormatted= (amount)=> {
+    
     let i = parseFloat(amount);
       if(isNaN(i)) { i = 0.00; }
     let minus = '';
