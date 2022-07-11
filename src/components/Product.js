@@ -20,7 +20,7 @@ export const Product = ({
 
             <div className='item'>
                 <div className='imgdiv'>
-                    <img src={pictures[id-1]} alt={name} width="150" height="150" />
+                    <img src={pictures[id-1]} alt={name} />
                 </div>
                 <div className='information'>
                     <div className='text-title'>{name}</div>

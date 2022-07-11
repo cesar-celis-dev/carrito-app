@@ -117,7 +117,7 @@ export const Main = () => {
     <div className='main container'>
       <div>
         <Header onRemoveAll={handleRemoveAll} />
-        <div>
+        <div className='products-container'>
           {
             cart.map(item =>
               {

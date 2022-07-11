@@ -1,9 +1,9 @@
 .main{
-    width: 900px;
-    height: 1250px;
+    width: 45vw;
+    height: 100vh;
     background-color: rgb(243, 245, 247);
     border-radius: 50px;
-    padding: 50px;
+    padding: 40px;
     box-shadow: 5px 20px 20px 10px rgba(3, 3, 3, 0.05);
     border: 1px solid rgb(224, 224, 224);
 }
@@ -14,12 +14,12 @@
     align-items: center;
 }
 .removeAll{
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     color: rgb(148, 148, 148);
     font-family: Arial, Helvetica, sans-serif;
 }
 .orderSummary{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: rgb(99, 99, 99);
@@ -28,7 +28,7 @@
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .simple{
     background: none;
@@ -36,53 +36,58 @@
 }
 .textTenue{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: rgb(105, 105, 105);
+    text-transform: capitalize;
 }
 
 .bold{
     font-weight: bold;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 .information{
-    padding: 20px;
+    padding: 5px;
 }
 
 img{
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 5px 5px 10px 5px rgba(3, 3, 3, 0.08);
     border: 1px solid rgb(201, 201, 201);
+    max-width: 75px;
+    max-height: 75px;
+
 }
 .value{
-    text-align: center;
-    font-size: 2rem;
+    text-align:end;
+    font-size: 1.3rem;
+    color: rgb(70, 70, 70);
     font-weight: 500;
 }
 .item{
     display: grid;
-    grid-template-columns: 150px 200px;
+    grid-template-columns: 100px auto;
     align-items: center;
 }
 
 .product{
     display: grid;
     grid-template-columns: auto auto;
-    margin: 30px;
+    padding: 10px;
 }
 
 .operation{
     display: grid;
-    grid-template-columns: 40px 40px 40px 120px 30px;
+    grid-template-columns: repeat(3, auto) 7rem auto;
     align-items: center;
     justify-content: space-around;
 }
 
 .btnProduct{
     border-radius: 100%;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     background-color: rgb(217, 229, 237);
     display: grid;
 }
@@ -119,10 +124,16 @@ hr {
     
 }
 .iconOp{
+    display:grid;
     background: none;
     border: none;
     font-size: 20px;
     color: rgb(155, 155, 155);
+}
+
+.iconOp i {
+    font-size: 0.8rem;
+    align-self: center;
 }
 .iconDelete{
     background: none;
@@ -142,7 +153,7 @@ hr {
 }
 .text-title{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: rgb(82, 82, 82);
     font-weight: 500;
 }
@@ -151,6 +162,12 @@ hr {
     row-gap: 15px;
 }
 .totalText{
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.products-container {
+    height: 50vh;
+    margin-top: 10px;
+    padding: 10px;
 }
