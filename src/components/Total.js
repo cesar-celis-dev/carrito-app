@@ -1,6 +1,20 @@
 import React from 'react';
 
-export const Total = ({billing}) => {
+export const Total = ({ticket}) => {
+  const currencyFormatted= (amount)=> {
+    let i = parseFloat(amount);
+      if(isNaN(i)) { i = 0.00; }
+    let minus = '';
+      if(i < 0) { minus = '-'; }
+      i = Math.abs(i);
+      i = parseInt((i + .005) * 100);
+      i = i / 100;
+    let s = `${i}`;
+      if(s.indexOf('.') < 0) { s += '.00'; }
+      if(s.indexOf('.') === (s.length - 2)) { s += '0'; }
+      s = minus + s;
+    return s;
+  }
   return (
     <div>
         <div className='totaldiv'>
@@ -11,10 +25,10 @@ export const Total = ({billing}) => {
                 <h1 className='bold'>Total (Including tax)</h1>
             </div>
             <div>
-                <h1>{billing.subtotal}</h1>
-                <h1>{billing.shipping}</h1>
-                <h1>{billing.taxes}</h1>
-                <h1 className='bold'>{billing.total}</h1>
+                <h1>${currencyFormatted(ticket.subtotal)}</h1>
+                <h1>${currencyFormatted(ticket.shipping)}</h1>
+                <h1>${currencyFormatted(ticket.taxes)}</h1>
+                <h1 className='bold'>${currencyFormatted(ticket.total)}</h1>
             </div>
         </div>
     </div>

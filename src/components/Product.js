@@ -7,11 +7,11 @@ export const Product = ({
     name,
     description,
     priceWT,
-    Add,
-    Sub,
-    Delete
+    onAdd,
+    onSub,
+    onDelete,
+    value
 }) => {
-
 
   return (
     <div>
@@ -33,24 +33,24 @@ export const Product = ({
                 <div className='btnProduct'>
                     <button
                         className='icon'
-                        onClick={Sub}
+                        onClick={() => onSub(id)}
                     >  <i className="fa-solid fa-minus"></i>
                     </button> 
                 </div>
 
-                <h1 className='text-center'>{}</h1> 
+                <h1 className='text-center'>{value}</h1> 
 
                 <div className='btnProduct'>
                     <button
                         className='icon'
-                        onClick={() => Add(id)}                 
+                        onClick={() => onAdd(id)}                 
                     >  <i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
                 <h1>${priceWT}</h1>
                 <button 
-                    onClick={Delete}
+                    onClick={() => onDelete(id)}
                     className='icon'>
                     <i className="fa-solid fa-trash-can"></i>
                 </button>
