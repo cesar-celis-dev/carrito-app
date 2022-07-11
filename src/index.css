@@ -170,4 +170,5 @@ hr {
     height: 50vh;
     margin-top: 10px;
     padding: 10px;
+    overflow-y: auto;
 }
